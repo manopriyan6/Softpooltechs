@@ -16,14 +16,14 @@ const PortfolioPage: React.FC = () => {
       role: "CEO",
       company: "Sporting Seeds",
       content: "Softpool Tech has been instrumental in bringing our vision to life. Their web development and digital marketing expertise have significantly improved our online presence and customer engagement.",
-      image: "/testimonials/chandru.jpg"
+      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
     },
     {
       name: "Benzen A",
       role: "CEO",
       company: "Swirome Media Groups",
       content: "Working with Softpool Tech has been a game-changer for our media business. Their innovative solutions and professional approach have helped us achieve our digital transformation goals.",
-      image: "/testimonials/benzen.jpg"
+      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg"
     },
     {
       name: "Kamal Narendra",
