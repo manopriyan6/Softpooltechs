@@ -16,21 +16,21 @@ const PortfolioPage: React.FC = () => {
       role: "CEO",
       company: "Sporting Seeds",
       content: "Softpool Tech has been instrumental in bringing our vision to life. Their web development and digital marketing expertise have significantly improved our online presence and customer engagement.",
-      image: "https://postimg.cc/2VX5wM2S"
+      image: "https://i.postimg.cc/2VX5wM2S/benzen.jpg"
     },
     {
       name: "Benzen A",
       role: "CEO",
       company: "Swirome Media Groups",
       content: "Working with Softpool Tech has been a game-changer for our media business. Their innovative solutions and professional approach have helped us achieve our digital transformation goals.",
-      image: "https://postimg.cc/2VX5wM2S"
+      image: "https://i.postimg.cc/2VX5wM2S/benzen.jpg"
     },
     {
       name: "Kamal Narendra",
       role: "President",
       company: "Rotary Club",
       content: "The dedication and expertise of the Softpool Tech team have been exceptional. They've helped us modernize our digital presence and better serve our community.",
-      image: "https://postimg.cc/2b3vHhhs"
+      image: "https://i.postimg.cc/2b3vHhhs/kamal.jpg"
     }
   ];
 
@@ -38,27 +38,27 @@ const PortfolioPage: React.FC = () => {
     {
       name: "Sporting Seeds",
       description: "Right Direction of Sports",
-      logo: "https://postimg.cc/qNwqfWvn"
+      logo: "https://i.postimg.cc/qNwqfWvn/sporting-seeds.png"
     },
     {
       name: "GOAT Sports Zone",
       description: "Sound Mind in a Sound Body",
-      logo: "https://postimg.cc/VdxnLJnw"
+      logo: "https://i.postimg.cc/VdxnLJnw/goat.png"
     },
     {
       name: "Rotary International",
       description: "Service Above Self",
-      logo: "https://postimg.cc/k6gfF2TZ"
+      logo: "https://i.postimg.cc/k6gfF2TZ/rotary.png"
     },
     {
       name: "Madras Midtown Rotary Club",
       description: "Community Service Excellence",
-      logo: "https://postimg.cc/PvmhWV32"
+      logo: "https://i.postimg.cc/PvmhWV32/madras-midtown.png"
     },
     {
       name: "Swirome South Media",
       description: "Entertainment Events & Celebrity Coverage",
-      logo: "https://postimg.cc/G4wg0S5c"
+      logo: "https://i.postimg.cc/G4wg0S5c/swirome.png"
     }
   ];
 
