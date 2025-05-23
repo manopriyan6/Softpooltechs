@@ -16,21 +16,21 @@ const PortfolioPage: React.FC = () => {
       role: "CEO",
       company: "Sporting Seeds",
       content: "Softpool Tech has been instrumental in bringing our vision to life. Their web development and digital marketing expertise have significantly improved our online presence and customer engagement.",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+      image: "https://postimg.cc/2VX5wM2S"
     },
     {
       name: "Benzen A",
       role: "CEO",
       company: "Swirome Media Groups",
       content: "Working with Softpool Tech has been a game-changer for our media business. Their innovative solutions and professional approach have helped us achieve our digital transformation goals.",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg"
+      image: "https://postimg.cc/2VX5wM2S"
     },
     {
       name: "Kamal Narendra",
       role: "President",
       company: "Rotary Club",
       content: "The dedication and expertise of the Softpool Tech team have been exceptional. They've helped us modernize our digital presence and better serve our community.",
-      image: "/testimonials/kamal-narendra.jpg"
+      image: "https://postimg.cc/2b3vHhhs"
     }
   ];
 
@@ -38,27 +38,27 @@ const PortfolioPage: React.FC = () => {
     {
       name: "Sporting Seeds",
       description: "Right Direction of Sports",
-      logo: "/logos/sporting-seeds.png"
+      logo: "https://postimg.cc/qNwqfWvn"
     },
     {
       name: "GOAT Sports Zone",
       description: "Sound Mind in a Sound Body",
-      logo: "/logos/goat-sports.png"
+      logo: "https://postimg.cc/VdxnLJnw"
     },
     {
       name: "Rotary International",
       description: "Service Above Self",
-      logo: "/logos/rotary.png"
+      logo: "https://postimg.cc/k6gfF2TZ"
     },
     {
       name: "Madras Midtown Rotary Club",
       description: "Community Service Excellence",
-      logo: "/logos/madras-midtown.png"
+      logo: "https://postimg.cc/PvmhWV32"
     },
     {
       name: "Swirome South Media",
       description: "Entertainment Events & Celebrity Coverage",
-      logo: "/logos/swirome.png"
+      logo: "https://postimg.cc/G4wg0S5c"
     }
   ];
 
