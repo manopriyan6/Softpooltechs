@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-100 bg-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-all duration-300 transform;
+  }
+
+  .btn-primary {
+    @apply bg-cyan-500 text-white hover:bg-cyan-600 shadow-lg hover:shadow-cyan-500/25;
+  }
+
+  .btn-secondary {
+    @apply bg-lime-500 text-gray-900 hover:bg-lime-600 shadow-lg hover:shadow-lime-500/25;
+  }
+
+  .btn-outline {
+    @apply border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500/10;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-10 text-center relative;
+  }
+
+  .section-title::after {
+    @apply content-[''] absolute h-1 w-20 bg-cyan-500 bottom-0 left-1/2 transform -translate-x-1/2 -mb-4;
+  }
+
+  .card {
+    @apply bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/10 transition-all duration-300;
+  }
+
+  .glow-text {
+    @apply text-cyan-400 drop-shadow-[0_0_2px_rgba(34,211,238,0.6)];
+  }
+
+  .neon-border {
+    @apply border border-cyan-500 shadow-[0_0_5px_rgba(34,211,238,0.6)];
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse 2s infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-500;
+}
