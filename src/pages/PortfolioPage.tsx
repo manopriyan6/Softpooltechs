@@ -123,11 +123,16 @@ const PortfolioPage: React.FC = () => {
                 key={index}
                 className="card p-8 flex flex-col items-center text-center group hover:bg-gray-800/50 transition-all duration-300"
               >
-                <div className="w-full h-32 mb-6 flex items-center justify-center">
+                <div className="w-full h-32 mb-6 flex items-center justify-center p-4">
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full w-auto object-contain"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
                   />
                 </div>
                 <h3 className="text-xl font-bold text-cyan-400 mb-2">{client.name}</h3>
