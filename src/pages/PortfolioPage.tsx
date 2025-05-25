@@ -12,13 +12,6 @@ interface Testimonial {
 const PortfolioPage: React.FC = () => {
   const testimonials: Testimonial[] = [
     {
-      name: "Softpool Tech",
-      role: "CEO",
-      company: "Softpool Technologies",
-      content: "Softpool Tech has been instrumental in bringing our vision to life. Their web development and digital marketing expertise have significantly improved our online presence and customer engagement.",
-      image: "https://i.postimg.cc/2VX5wM2S/benzen.jpg"
-    },
-    {
       name: "Benzen A",
       role: "CEO",
       company: "Swirome Media Groups",
@@ -82,7 +75,7 @@ const PortfolioPage: React.FC = () => {
       <section className="py-20 bg-gray-800">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-center mb-12">Client Testimonials</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="card p-6">
                 <div className="flex items-center mb-6">
