@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, Linkedin } from 'lucide-react';
 
 interface ContactFormData {
   name: string;
@@ -254,31 +254,13 @@ Submitted: ${timestamp}
             <h3 className="text-xl font-bold mb-6">Connect With Us</h3>
             <div className="flex justify-center space-x-6">
               <a
-                href="https://github.com/softpooltech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors"
-                aria-label="Github"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://linkedin.com/company/softpool"
+                href="https://www.linkedin.com/company/softpool-technologies/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="https://twitter.com/softpooltech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-6 h-6" />
               </a>
             </div>
           </div>

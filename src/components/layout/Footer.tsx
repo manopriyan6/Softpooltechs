@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Code, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -19,14 +19,8 @@ const Footer: React.FC = () => {
               Empowering businesses with innovative digital solutions. We create cutting-edge solutions that help businesses thrive in the digital age.
             </p>
             <div className="flex space-x-4">
-              <a href="https://github.com/softpooltech" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-gray-400 hover:text-cyan-500 transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com/company/softpool" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-cyan-500 transition-colors">
+              <a href="https://www.linkedin.com/company/softpool-technologies/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-cyan-500 transition-colors">
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://twitter.com/softpooltech" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-cyan-500 transition-colors">
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
