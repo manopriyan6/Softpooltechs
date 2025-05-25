@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
@@ -10,11 +10,41 @@ interface ContactFormData {
 }
 
 const ContactPage: React.FC = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<ContactFormData>();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log(data);
-    // Handle form submission
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-whatsapp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Message sent successfully! We will get back to you soon.',
+      });
+      reset();
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -75,6 +105,13 @@ const ContactPage: React.FC = () => {
           <div className="max-w-2xl mx-auto">
             <div className="card p-8">
               <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+              {submitStatus && (
+                <div className={`p-4 rounded-lg mb-6 ${
+                  submitStatus.type === 'success' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
+                }`}>
+                  {submitStatus.message}
+                </div>
+              )}
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -83,6 +120,7 @@ const ContactPage: React.FC = () => {
                   <input
                     {...register("name", { required: true })}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
+                    disabled={isSubmitting}
                   />
                   {errors.name && (
                     <span className="text-red-500 text-sm">Name is required</span>
@@ -99,6 +137,7 @@ const ContactPage: React.FC = () => {
                       pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     })}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
+                    disabled={isSubmitting}
                   />
                   {errors.email && (
                     <span className="text-red-500 text-sm">Valid email is required</span>
@@ -112,6 +151,7 @@ const ContactPage: React.FC = () => {
                   <input
                     {...register("subject", { required: true })}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
+                    disabled={isSubmitting}
                   />
                   {errors.subject && (
                     <span className="text-red-500 text-sm">Subject is required</span>
@@ -126,15 +166,20 @@ const ContactPage: React.FC = () => {
                     {...register("message", { required: true })}
                     rows={4}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
+                    disabled={isSubmitting}
                   ></textarea>
                   {errors.message && (
                     <span className="text-red-500 text-sm">Message is required</span>
                   )}
                 </div>
 
-                <button type="submit" className="btn btn-primary w-full">
+                <button 
+                  type="submit" 
+                  className={`btn btn-primary w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
+                >
                   <Send className="w-4 h-4 mr-2" />
-                  Get Quote
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
