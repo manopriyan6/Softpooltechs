@@ -87,8 +87,8 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-cyan-500 flex-shrink-0" />
-                <a href="mailto:tech@softpool.org" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                  tech@softpool.org
+                <a href="mailto:mail@softpooltech.in" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  mail@softpooltech.in
                 </a>
               </li>
             </ul>
@@ -102,10 +102,10 @@ const Footer: React.FC = () => {
               &copy; {currentYear} Softpool Tech. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
+              <a href="https://softpooltech.in/privacy-policy" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
+              <a href="https://softpooltech.in/terms-of-service" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
                 Terms of Service
               </a>
             </div>
