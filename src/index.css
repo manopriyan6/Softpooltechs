@@ -3,28 +3,34 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 16px;
+  }
+
   body {
-    @apply font-sans text-gray-100 bg-gray-900;
+    @apply font-sans text-gray-100 bg-gray-900 min-h-screen;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
 
+  /* Mobile-first typography */
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl;
+    @apply text-2xl sm:text-3xl md:text-4xl leading-tight;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-xl sm:text-2xl md:text-3xl leading-tight;
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed text-base sm:text-lg;
   }
 }
 
@@ -33,36 +39,54 @@
     @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
 
+  /* Mobile-optimized buttons with proper touch targets */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-all duration-300 transform;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-all duration-300 transform min-h-[44px] min-w-[44px] touch-manipulation;
   }
 
   .btn-primary {
-    @apply bg-cyan-500 text-white hover:bg-cyan-600 shadow-lg hover:shadow-cyan-500/25;
+    @apply bg-cyan-500 text-white hover:bg-cyan-600 active:bg-cyan-700 shadow-lg hover:shadow-cyan-500/25;
   }
 
   .btn-secondary {
-    @apply bg-lime-500 text-gray-900 hover:bg-lime-600 shadow-lg hover:shadow-lime-500/25;
+    @apply bg-lime-500 text-gray-900 hover:bg-lime-600 active:bg-lime-700 shadow-lg hover:shadow-lime-500/25;
   }
 
   .btn-outline {
-    @apply border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500/10;
+    @apply border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500/10 active:bg-cyan-500/20;
   }
 
+  /* Responsive sections */
   .section {
-    @apply py-16 md:py-24;
+    @apply py-12 sm:py-16 md:py-24;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-10 text-center relative;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 text-center relative;
   }
 
   .section-title::after {
-    @apply content-[''] absolute h-1 w-20 bg-cyan-500 bottom-0 left-1/2 transform -translate-x-1/2 -mb-4;
+    @apply content-[''] absolute h-1 w-16 sm:w-20 bg-cyan-500 bottom-0 left-1/2 transform -translate-x-1/2 -mb-4;
   }
 
+  /* Mobile-optimized cards */
   .card {
-    @apply bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/10 transition-all duration-300;
+    @apply bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 p-4 sm:p-6;
+  }
+
+  /* Touch-friendly form elements */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    @apply min-h-[44px] px-4 py-2 w-full rounded-lg;
+  }
+
+  /* Checkbox and radio with larger touch targets */
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply w-5 h-5 cursor-pointer;
   }
 
   .glow-text {
@@ -74,47 +98,77 @@
   }
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Mobile-optimized animations */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse 2s infinite;
+  }
 }
 
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* Mobile-optimized scrollbar */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyan-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyan-500;
+  }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
+/* Mobile-specific optimizations */
+@media (max-width: 767px) {
+  .container-custom {
+    @apply px-4;
+  }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
+  .card {
+    @apply mx-4;
+  }
 
-.animate-slide-up {
-  animation: slideUp 0.5s ease-out forwards;
-}
+  /* Improve touch targets for mobile navigation */
+  .mobile-nav-item {
+    @apply py-3 px-4 text-lg;
+  }
 
-.animate-pulse-glow {
-  animation: pulse 2s infinite;
-}
+  /* Adjust spacing for mobile */
+  .section {
+    @apply py-8;
+  }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-gray-800;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-cyan-600 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-cyan-500;
+  /* Stack grid items on mobile */
+  .grid {
+    @apply gap-4;
+  }
 }
