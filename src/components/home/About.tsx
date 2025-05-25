@@ -36,14 +36,14 @@ const AboutSection: React.FC = () => {
               />
             </div>
             {/* Stats overlay */}
-            <div className="absolute -bottom-8 -right-8 bg-gray-900 rounded-lg p-6 shadow-xl max-w-xs">
-              <div className="grid grid-cols-3 gap-4">
+            <div className="absolute -bottom-8 left-4 right-4 lg:-right-8 lg:left-auto lg:w-72 bg-gray-900 rounded-lg p-6 shadow-xl">
+              <div className="grid grid-cols-3 gap-6">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="flex justify-center text-cyan-500 mb-2">
                       {stat.icon}
                     </div>
-                    <div className="text-2xl font-bold glow-text">{stat.value}</div>
+                    <div className="text-xl lg:text-2xl font-bold glow-text">{stat.value}</div>
                     <div className="text-sm text-gray-400">{stat.label}</div>
                   </div>
                 ))}
@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Right column: Content */}
-          <div>
+          <div className="mt-16 lg:mt-0">
             <div className="text-sm font-medium text-cyan-500 mb-2">ABOUT US</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Innovative Solutions for the Digital Age</h2>
             <p className="text-gray-300 mb-6">
