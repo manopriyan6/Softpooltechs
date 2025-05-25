@@ -4,9 +4,9 @@ import { CheckCircle, Users, Award, Cpu } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const stats = [
-    { icon: <Users className="h-6 w-6" />, value: '20+', label: 'Clients' },
-    { icon: <Award className="h-6 w-6" />, value: '2+', label: 'Years Experience' },
-    { icon: <Cpu className="h-6 w-6" />, value: '30+', label: 'Projects Completed' },
+    { icon: <Users className="h-5 w-5 sm:h-6 sm:w-6" />, value: '20+', label: 'Clients' },
+    { icon: <Award className="h-5 w-5 sm:h-6 sm:w-6" />, value: '2+', label: 'Years Experience' },
+    { icon: <Cpu className="h-5 w-5 sm:h-6 sm:w-6" />, value: '30+', label: 'Projects Completed' },
   ];
 
   const keyPoints = [
@@ -25,7 +25,7 @@ const AboutSection: React.FC = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left column: Image */}
           <div className="relative">
             <div className="rounded-lg overflow-hidden neon-border">
@@ -35,16 +35,16 @@ const AboutSection: React.FC = () => {
                 className="w-full h-auto"
               />
             </div>
-            {/* Stats overlay */}
-            <div className="absolute -bottom-8 left-4 right-4 lg:-right-8 lg:left-auto lg:w-72 bg-gray-900 rounded-lg p-6 shadow-xl">
-              <div className="grid grid-cols-3 gap-6">
+            {/* Stats overlay - Optimized for mobile */}
+            <div className="absolute -bottom-4 sm:-bottom-8 left-4 right-4 lg:-right-8 lg:left-auto lg:w-72 bg-gray-900/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-xl">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="flex justify-center text-cyan-500 mb-2">
+                    <div className="flex justify-center text-cyan-500 mb-1 sm:mb-2">
                       {stat.icon}
                     </div>
-                    <div className="text-xl lg:text-2xl font-bold glow-text">{stat.value}</div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold glow-text">{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-gray-400">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -54,7 +54,7 @@ const AboutSection: React.FC = () => {
           {/* Right column: Content */}
           <div className="mt-16 lg:mt-0">
             <div className="text-sm font-medium text-cyan-500 mb-2">ABOUT US</div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Innovative Solutions for the Digital Age</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Innovative Solutions for the Digital Age</h2>
             <p className="text-gray-300 mb-6">
               At Softpool Tech, we're passionate about creating digital solutions that drive business growth and improve user experiences. With our expertise in web and mobile development, we transform ideas into reality.
             </p>
