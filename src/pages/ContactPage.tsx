@@ -7,6 +7,8 @@ interface ContactFormData {
   email: string;
   subject: string;
   message: string;
+  acceptPrivacy: boolean;
+  acceptTerms: boolean;
 }
 
 const ContactPage: React.FC = () => {
@@ -18,29 +20,39 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-whatsapp`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify(data),
+    if (!data.acceptPrivacy || !data.acceptTerms) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please accept the Privacy Policy and Terms & Conditions to proceed.',
       });
+      setIsSubmitting(false);
+      return;
+    }
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
+    const timestamp = new Date().toLocaleString();
+    const whatsappMessage = encodeURIComponent(`
+New Contact Form Submission
+--------------------------
+Name: ${data.name}
+Email: ${data.email}
+Subject: ${data.subject}
+Message: ${data.message}
+Submitted: ${timestamp}
+    `.trim());
 
+    try {
+      // Redirect to WhatsApp
+      window.location.href = `https://wa.me/919385661495?text=${whatsappMessage}`;
+      
       setSubmitStatus({
         type: 'success',
-        message: 'Message sent successfully! We will get back to you soon.',
+        message: 'Redirecting to WhatsApp...',
       });
       reset();
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: 'Failed to send message. Please try again later.',
+        message: 'Failed to process your request. Please try again later.',
       });
     } finally {
       setIsSubmitting(false);
@@ -61,7 +73,7 @@ const ContactPage: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      content: "tech@softpool.org"
+      content: "mail@softpooltech.in"
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -115,62 +127,114 @@ const ContactPage: React.FC = () => {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Name
+                    Name *
                   </label>
                   <input
-                    {...register("name", { required: true })}
+                    {...register("name", { required: "Name is required" })}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
                     disabled={isSubmitting}
                   />
                   {errors.name && (
-                    <span className="text-red-500 text-sm">Name is required</span>
+                    <span className="text-red-500 text-sm">{errors.name.message}</span>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Email
+                    Email *
                   </label>
                   <input
                     {...register("email", {
-                      required: true,
-                      pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address"
+                      }
                     })}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
                     disabled={isSubmitting}
                   />
                   {errors.email && (
-                    <span className="text-red-500 text-sm">Valid email is required</span>
+                    <span className="text-red-500 text-sm">{errors.email.message}</span>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject
+                    Subject *
                   </label>
                   <input
-                    {...register("subject", { required: true })}
+                    {...register("subject", { required: "Subject is required" })}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
                     disabled={isSubmitting}
                   />
                   {errors.subject && (
-                    <span className="text-red-500 text-sm">Subject is required</span>
+                    <span className="text-red-500 text-sm">{errors.subject.message}</span>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
+                    Message *
                   </label>
                   <textarea
-                    {...register("message", { required: true })}
+                    {...register("message", { required: "Message is required" })}
                     rows={4}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500"
                     disabled={isSubmitting}
                   ></textarea>
                   {errors.message && (
-                    <span className="text-red-500 text-sm">Message is required</span>
+                    <span className="text-red-500 text-sm">{errors.message.message}</span>
                   )}
+                </div>
+
+                {/* Privacy Policy and Terms Checkboxes */}
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      {...register("acceptPrivacy", { required: true })}
+                      className="mt-1 mr-2"
+                      disabled={isSubmitting}
+                    />
+                    <label className="text-sm text-gray-300">
+                      I have read and accept the{" "}
+                      <a
+                        href="/privacy-policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:text-cyan-300"
+                      >
+                        Privacy Policy
+                      </a>
+                      {errors.acceptPrivacy && (
+                        <span className="block text-red-500">Please accept the Privacy Policy</span>
+                      )}
+                    </label>
+                  </div>
+
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      {...register("acceptTerms", { required: true })}
+                      className="mt-1 mr-2"
+                      disabled={isSubmitting}
+                    />
+                    <label className="text-sm text-gray-300">
+                      I agree to the{" "}
+                      <a
+                        href="/terms-of-service"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:text-cyan-300"
+                      >
+                        Terms & Conditions
+                      </a>
+                      {errors.acceptTerms && (
+                        <span className="block text-red-500">Please accept the Terms & Conditions</span>
+                      )}
+                    </label>
+                  </div>
                 </div>
 
                 <button 
@@ -179,7 +243,7 @@ const ContactPage: React.FC = () => {
                   disabled={isSubmitting}
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Processing...' : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -190,21 +254,27 @@ const ContactPage: React.FC = () => {
             <h3 className="text-xl font-bold mb-6">Connect With Us</h3>
             <div className="flex justify-center space-x-6">
               <a
-                href="#"
+                href="https://github.com/softpooltech"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors"
                 aria-label="Github"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com/company/softpool"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/softpooltech"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors"
                 aria-label="Twitter"
               >
