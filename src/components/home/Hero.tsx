@@ -4,7 +4,7 @@ import { ArrowRight, Code } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
+    <div className="relative min-h-[100svh] sm:min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden py-16 sm:py-20">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/20 rounded-full filter blur-3xl"></div>
@@ -16,20 +16,22 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-center bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-gray-700 animate-fade-in">
             <Code className="h-4 w-4 text-cyan-500 mr-2" />
             <span className="text-sm">Transforming ideas into digital reality</span>
           </div>
           
           <h1 className="mb-6 animate-fade-in">
-            <span className="block text-4xl md:text-5xl lg:text-6xl font-bold text-white">Powering Ideas with</span>
-            <span className="block text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-lime-400 animate-pulse-glow">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Powering Ideas with
+            </span>
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-lime-400 animate-pulse-glow">
               Code & Innovation
             </span>
           </h1>
           
-          <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl animate-slide-up opacity-0" style={{ animationDelay: '0.3s' }}>
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 max-w-2xl animate-slide-up opacity-0" style={{ animationDelay: '0.3s' }}>
             We're a team of passionate developers, designers, and strategists crafting cutting-edge digital solutions that help businesses thrive in the digital age.
           </p>
           
