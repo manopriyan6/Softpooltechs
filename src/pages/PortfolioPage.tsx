@@ -12,9 +12,9 @@ interface Testimonial {
 const PortfolioPage: React.FC = () => {
   const testimonials: Testimonial[] = [
     {
-      name: "Chandru",
+      name: "Softpool Tech",
       role: "CEO",
-      company: "Sporting Seeds",
+      company: "Softpool Technologies",
       content: "Softpool Tech has been instrumental in bringing our vision to life. Their web development and digital marketing expertise have significantly improved our online presence and customer engagement.",
       image: "https://i.postimg.cc/2VX5wM2S/benzen.jpg"
     },
@@ -58,7 +58,7 @@ const PortfolioPage: React.FC = () => {
     {
       name: "Swirome South Media",
       description: "Entertainment Events & Celebrity Coverage",
-      logo: "https://i.postimg.cc/G4wg0S5c/swirome.png"
+      logo: "https://i.postimg.cc/rd5c1qxf/swirome.png"
     }
   ];
 
