@@ -51,7 +51,7 @@ const PortfolioPage: React.FC = () => {
     {
       name: "Swirome South Media",
       description: "Entertainment Events & Celebrity Coverage",
-      logo: "https://i.postimg.cc/rd5c1qxf/swirome.png"
+      logo: "https://i.postimg.cc/rdcgjtm0/swirome.png"
     }
   ];
 
