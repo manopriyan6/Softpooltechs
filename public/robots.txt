@@ -1,5 +1,26 @@
+# Softpool Technologies Robots.txt
+# https://softpooltech.in
+
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Specific paths to allow
+Allow: /about
+Allow: /services
+Allow: /portfolio
+Allow: /contact
+
+# Block access to specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Allow access to sitemap
+Allow: /sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
 
 # Sitemaps
 Sitemap: https://softpooltech.in/sitemap.xml
