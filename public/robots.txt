@@ -11,16 +11,21 @@ Allow: /services
 Allow: /portfolio
 Allow: /contact
 
-# Block access to specific file types
-Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /*.txt$
+# Block access to development files
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /dist/
+Disallow: /src/
+Disallow: /node_modules/
 
-# Allow access to sitemap
+# Allow access to essential files
 Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /favicon.svg
+Allow: /og-image.jpg
 
-# Crawl-delay
-Crawl-delay: 10
+# Crawl-delay directive (in seconds)
+Crawl-delay: 5
 
-# Sitemaps
+# Sitemap location
 Sitemap: https://softpooltech.in/sitemap.xml
