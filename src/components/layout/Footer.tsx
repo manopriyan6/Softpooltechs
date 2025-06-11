@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import { Code, Mail, Phone, MapPin, Linkedin, ArrowUp } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <footer className="bg-gray-950 pt-16 pb-8">
+    <footer className="bg-gray-950 pt-16 pb-8 relative">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -88,6 +95,17 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Scroll to Top Button */}
+        <div className="flex justify-center mb-8">
+          <button
+            onClick={scrollToTop}
+            className="group bg-gradient-to-r from-cyan-500 to-lime-500 hover:from-cyan-400 hover:to-lime-400 text-white p-3 rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-950"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="h-6 w-6 group-hover:animate-bounce" />
+          </button>
         </div>
 
         {/* Divider */}
