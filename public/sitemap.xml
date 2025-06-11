@@ -39,6 +39,13 @@
 
   <!-- Legal pages -->
   <url>
+    <loc>https://softpooltech.in/legal</loc>
+    <lastmod>2024-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://softpooltech.in/privacy-policy</loc>
     <lastmod>2024-03-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -47,6 +54,13 @@
 
   <url>
     <loc>https://softpooltech.in/terms-of-service</loc>
+    <lastmod>2024-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://softpooltech.in/refund-policy</loc>
     <lastmod>2024-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

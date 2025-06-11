@@ -200,7 +200,7 @@ Submitted: ${timestamp}
                     <label className="text-sm text-gray-300">
                       I have read and accept the{" "}
                       <a
-                        href="/privacy-policy"
+                        href="/legal"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-cyan-400 hover:text-cyan-300"
@@ -223,7 +223,7 @@ Submitted: ${timestamp}
                     <label className="text-sm text-gray-300">
                       I agree to the{" "}
                       <a
-                        href="/terms-of-service"
+                        href="/legal"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-cyan-400 hover:text-cyan-300"

@@ -95,12 +95,12 @@ const Footer: React.FC = () => {
             <p className="text-gray-500 text-sm">
               &copy; {currentYear} Softpool Tech. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
-                Privacy Policy
+            <div className="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
+              <Link to="/legal" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
+                Privacy Policy & Terms
               </Link>
-              <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
-                Terms of Service
+              <Link to="/refund-policy" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
+                Refund Policy
               </Link>
             </div>
           </div>
