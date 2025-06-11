@@ -22,7 +22,8 @@ import {
   TrendingUp,
   ArrowRight,
   FileText,
-  Globe
+  Globe,
+  MessageCircle
 } from 'lucide-react';
 
 const InternshipPage: React.FC = () => {
@@ -142,6 +143,11 @@ const InternshipPage: React.FC = () => {
     }
   ];
 
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent("Hello! I need your help with the internship process. Could you please guide me through the steps?");
+    window.open(`https://wa.me/919385661495?text=${message}`, '_blank');
+  };
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -177,9 +183,13 @@ const InternshipPage: React.FC = () => {
                 Apply Now
                 <ExternalLink className="ml-2 h-5 w-5" />
               </a>
-              <Link to="/contact" className="btn btn-outline text-lg px-8 py-4">
-                Ask Questions
-              </Link>
+              <button 
+                onClick={handleWhatsAppClick}
+                className="btn btn-outline text-lg px-8 py-4 hover:bg-green-500/10 hover:border-green-500 hover:text-green-400 transition-all duration-300"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Get WhatsApp Help
+              </button>
             </div>
           </div>
         </div>
@@ -372,20 +382,27 @@ const InternshipPage: React.FC = () => {
               </div>
               
               <div className="card p-8">
-                <h3 className="text-2xl font-bold mb-6 text-lime-400">Have Questions?</h3>
+                <h3 className="text-2xl font-bold mb-6 text-lime-400">Need Guidance?</h3>
                 <p className="text-gray-400 mb-6">
-                  Our support team is here to help you with any queries about the program.
+                  Get personalized WhatsApp assistance with your internship application process.
                 </p>
-                <div className="space-y-4">
+                <button 
+                  onClick={handleWhatsAppClick}
+                  className="btn btn-secondary w-full bg-green-500 hover:bg-green-600 text-white border-green-500 hover:border-green-600"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Get WhatsApp Help
+                </button>
+                <div className="mt-4 space-y-2">
                   <div className="flex items-center justify-center space-x-3">
-                    <Phone className="w-5 h-5 text-cyan-400" />
-                    <a href="tel:+919385661495" className="text-cyan-400 hover:text-cyan-300">
+                    <Phone className="w-4 h-4 text-cyan-400" />
+                    <a href="tel:+919385661495" className="text-cyan-400 hover:text-cyan-300 text-sm">
                       +91 93856 61495
                     </a>
                   </div>
                   <div className="flex items-center justify-center space-x-3">
-                    <Mail className="w-5 h-5 text-cyan-400" />
-                    <a href="mailto:mail@softpooltech.in" className="text-cyan-400 hover:text-cyan-300">
+                    <Mail className="w-4 h-4 text-cyan-400" />
+                    <a href="mailto:mail@softpooltech.in" className="text-cyan-400 hover:text-cyan-300 text-sm">
                       mail@softpooltech.in
                     </a>
                   </div>
