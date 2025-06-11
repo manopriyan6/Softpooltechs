@@ -96,12 +96,12 @@ const Footer: React.FC = () => {
               &copy; {currentYear} Softpool Tech. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="https://softpooltech.in/privacy-policy" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
+              <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
                 Privacy Policy
-              </a>
-              <a href="https://softpooltech.in/terms-of-service" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
+              </Link>
+              <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

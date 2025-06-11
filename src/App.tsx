@@ -5,6 +5,8 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -20,6 +22,8 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/terms-of-service" element={<TermsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPage />} />
           </Routes>
         </main>
         <Footer />
