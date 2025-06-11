@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((item) => (
+              {['Home', 'About', 'Services', 'Portfolio', 'Internship', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link 
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
@@ -51,7 +51,8 @@ const Footer: React.FC = () => {
                 'IT Solutions', 
                 'WhatsApp Marketing', 
                 'Social Media Marketing', 
-                'Design & Creatives'
+                'Design & Creatives',
+                'Professional Training'
               ].map((service) => (
                 <li key={service}>
                   <Link 

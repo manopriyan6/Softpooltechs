@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
+import InternshipPage from './pages/InternshipPage';
 import LegalPage from './pages/LegalPage';
 import RefundPage from './pages/RefundPage';
 import Header from './components/layout/Header';
@@ -22,6 +23,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/internship" element={<InternshipPage />} />
             <Route path="/privacy-policy" element={<LegalPage />} />
             <Route path="/terms-of-service" element={<LegalPage />} />
             <Route path="/legal" element={<LegalPage />} />
