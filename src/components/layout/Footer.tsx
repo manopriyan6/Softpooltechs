@@ -121,6 +121,9 @@ const Footer: React.FC = () => {
               <Link to="/refund-policy" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
                 Refund Policy
               </Link>
+              <Link to="/shipping-delivery" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">
+                Shipping & Delivery
+              </Link>
             </div>
           </div>
         </div>

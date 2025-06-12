@@ -37,6 +37,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://softpooltech.in/internship</loc>
+    <lastmod>2024-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Legal pages -->
   <url>
     <loc>https://softpooltech.in/legal</loc>
@@ -61,6 +68,13 @@
 
   <url>
     <loc>https://softpooltech.in/refund-policy</loc>
+    <lastmod>2024-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://softpooltech.in/shipping-delivery</loc>
     <lastmod>2024-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

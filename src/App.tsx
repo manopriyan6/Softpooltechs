@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import InternshipPage from './pages/InternshipPage';
 import LegalPage from './pages/LegalPage';
 import RefundPage from './pages/RefundPage';
+import ShippingPage from './pages/ShippingPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/terms-of-service" element={<LegalPage />} />
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/refund-policy" element={<RefundPage />} />
+            <Route path="/shipping-delivery" element={<ShippingPage />} />
           </Routes>
         </main>
         <Footer />
