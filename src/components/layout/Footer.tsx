@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
           <div>
             <Link to="/" className="flex items-center space-x-2 text-xl font-bold mb-4">
               <Code className="h-8 w-8 text-cyan-500" />
-              <span className="text-white">Soft<span className="text-cyan-500">pool</span></span>
+              <span className="text-white">Softpool <span className="text-cyan-500">Technologies</span></span>
             </Link>
             <p className="text-gray-400 mb-4">
               Empowering businesses with innovative digital solutions. We create cutting-edge solutions that help businesses thrive in the digital age.
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Softpool Tech. All rights reserved.
+              &copy; {currentYear} Softpool Technologies. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
               <Link to="/legal" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">

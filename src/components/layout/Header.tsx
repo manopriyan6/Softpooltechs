@@ -51,7 +51,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 text-xl font-bold">
             <Code className="h-8 w-8 text-cyan-500" />
-            <span className="text-white">Soft<span className="text-cyan-500">pool</span></span>
+            <span className="text-white">Softpool <span className="text-cyan-500">Technologies</span></span>
           </Link>
 
           {/* Desktop Navigation */}
