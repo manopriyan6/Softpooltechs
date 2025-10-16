@@ -6,6 +6,7 @@ const ServicesPage: React.FC = () => {
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Web Development",
+      price: "₹29,000",
       description: "Custom websites and web applications built with modern technologies.",
       features: [
         "Responsive Design",
@@ -19,6 +20,7 @@ const ServicesPage: React.FC = () => {
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "IT Solutions",
+      price: "₹19,000/month",
       description: "Comprehensive IT solutions to streamline your business operations.",
       features: [
         "Custom Software Development",
@@ -32,6 +34,7 @@ const ServicesPage: React.FC = () => {
     {
       icon: <MessageSquare className="w-8 h-8" />,
       title: "WhatsApp Marketing",
+      price: "₹12,000",
       description: "Effective WhatsApp marketing solutions for better customer engagement.",
       features: [
         "Campaign Management",
@@ -45,6 +48,7 @@ const ServicesPage: React.FC = () => {
     {
       icon: <Share2 className="w-8 h-8" />,
       title: "Social Media Marketing",
+      price: "₹10,000",
       description: "Strategic social media marketing to boost your online presence.",
       features: [
         "Content Strategy",
@@ -58,6 +62,7 @@ const ServicesPage: React.FC = () => {
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Design & Creatives",
+      price: "₹6,000",
       description: "Creative design solutions that make your brand stand out.",
       features: [
         "UI/UX Design",
@@ -95,7 +100,8 @@ const ServicesPage: React.FC = () => {
                 <div className="bg-gray-700/50 w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-cyan-400">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                <div className="text-2xl font-bold text-cyan-400 mb-4">{service.price}</div>
                 <p className="text-gray-400 mb-6">{service.description}</p>
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
