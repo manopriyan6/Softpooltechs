@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, MessageSquare, Palette, Code2, Share2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ServicesPage: React.FC = () => {
   const services = [
@@ -103,7 +104,7 @@ const ServicesPage: React.FC = () => {
                 <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
                 <div className="text-2xl font-bold text-cyan-400 mb-4">{service.price}</div>
                 <p className="text-gray-400 mb-6">{service.description}</p>
-                <ul className="space-y-3">
+                <ul className="space-y-3 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-gray-300">
                       <span className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
@@ -111,6 +112,12 @@ const ServicesPage: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  to="/contact"
+                  className="inline-block w-full text-center bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                >
+                  Buy Now
+                </Link>
               </div>
             ))}
           </div>

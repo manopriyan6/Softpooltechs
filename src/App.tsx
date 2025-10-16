@@ -9,6 +9,8 @@ import InternshipPage from './pages/InternshipPage';
 import LegalPage from './pages/LegalPage';
 import RefundPage from './pages/RefundPage';
 import ShippingPage from './pages/ShippingPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -25,8 +27,9 @@ function App() {
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/internship" element={<InternshipPage />} />
-            <Route path="/privacy-policy" element={<LegalPage />} />
-            <Route path="/terms-of-service" element={<LegalPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPage />} />
+            <Route path="/terms-of-service" element={<TermsPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/refund-policy" element={<RefundPage />} />
             <Route path="/shipping-delivery" element={<ShippingPage />} />
