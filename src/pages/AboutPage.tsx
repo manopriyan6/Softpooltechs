@@ -35,6 +35,13 @@ const AboutPage: React.FC = () => {
             <p className="text-gray-300 text-lg mb-8">
               Your trusted partner in digital transformation and technological innovation
             </p>
+            <div className="bg-gray-800/50 rounded-lg p-6 mt-8">
+              <p className="text-gray-300 text-lg">
+                Founded and led by <span className="text-cyan-400 font-semibold">Manopriyan P</span>,
+                Softpool Technologies is dedicated to empowering businesses with innovative digital solutions
+                and cutting-edge technology services.
+              </p>
+            </div>
           </div>
         </div>
       </section>
